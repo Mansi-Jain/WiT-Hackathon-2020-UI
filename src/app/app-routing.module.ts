@@ -7,7 +7,6 @@ import { OrderListComponent } from './order-list/order-list.component';
 
 const routes: Routes = [
   {path: "", component: LoginComponent},
-  {path: "logout", component: LoginComponent},
   {path: "register", component: RegisterComponent},
   {path: "order", component: OrderComponent},
   {path: "order-list", component: OrderListComponent}
