@@ -11,7 +11,7 @@ import { first } from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit {
 
-  form: FormGroup;
+    form: FormGroup;
     loading = false;
     submitted = false;
     returnUrl: string;
@@ -53,13 +53,11 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.alertService.info("Login Successful");
                     this.router.navigate(['order'])
                 },
                 error => {
-                    this.alertService.error(error);
+                    this.alertService.error("Incorrect Credentails");
                     this.loading = false;
-                    this.form.reset();
                 });
     }
 

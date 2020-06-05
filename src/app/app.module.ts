@@ -9,13 +9,17 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { OrderComponent } from './order/order.component';
+import { OrderListComponent } from './order-list/order-list.component';
+import { AlertComponent } from './_components';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    OrderComponent
+    OrderComponent,
+    OrderListComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

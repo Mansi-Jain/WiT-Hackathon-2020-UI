@@ -52,7 +52,7 @@ export class RegisterComponent implements OnInit {
                   this.router.navigate(['/']);
               },
               error => {
-                  this.alertService.error(error);
+                  this.alertService.error("This Ration Card Number is already registered with us.");
                   this.loading = false;
               });
     }

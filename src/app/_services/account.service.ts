@@ -1,17 +1,17 @@
 ﻿import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-
 import { environment } from '../../environments/environment';
-import { User } from '../_models';
+import { User, Order } from '../_models';
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {
     private userSubject: BehaviorSubject<User>;
     public user: Observable<User>;
-
+    public uniqueId;
     constructor(
         private router: Router,
         private http: HttpClient
@@ -20,13 +20,25 @@ export class AccountService {
         this.user = this.userSubject.asObservable();
     }
 
+    handleError(error: HttpErrorResponse) {
+        let errorMessage = 'Unknown error!';
+        if (error.error instanceof ErrorEvent) {
+          // Client-side errors
+          errorMessage = `Error: ${error.error.message}`;
+        } else {
+          // Server-side errors
+          errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+        }
+        window.alert(errorMessage);
+        return throwError(errorMessage);
+      }
+
     public get userValue(): User {
         return this.userSubject.value;
     }
 
     login(uniqueId, password) {
-        console.log(uniqueId);
-        console.log(password);
+        this.uniqueId = uniqueId;
         return this.http.post(`${environment.apiUrl}/login`, { uniqueId, password });
     }
 
@@ -36,13 +48,18 @@ export class AccountService {
     }
 
     register(user: User) {
-        console.log(user);
-        return this.http.post(`${environment.apiUrl}/register`, user);
+        return this.http.post(`${environment.apiUrl}/member/add`, user);
     }
 
-    placeOrder() {
-        console.log(this.userValue);
-        return this.http.post(`${environment.apiUrl}/order`, this.userValue.uniqueId);
+    placeOrder(uniqueId) {
+        return this.http.post(`${environment.apiUrl}/order/add`, { uniqueId });
     }
 
+    getAll() {
+        return this.http.get<Order[]>(`${environment.apiUrl}/order/`+ this.uniqueId);
+    }
+
+    getUniqueId() {
+        return this.uniqueId;
+    }
 }

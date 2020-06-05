@@ -1,0 +1,37 @@
+<div class="col-md-6 offset-md-3 mt-5">
+    <div class="card" style="width: 50rem;">
+        <div class="card-body">
+            <div class="card-header text-right">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/order">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <table class="table table-striped table-bordered" *ngIf="orders" style="width: 47.5rem;">
+                <thead>
+                    <tr>
+                        <th style="width: 25%">Order Date</th>
+                        <th style="width: 25%">Created By</th>
+                        <th style="width: 25%">Number of Packets</th>
+                        <th style="width: 25%">Delivery Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let order of orders">
+                        <td>{{order.orderDate}}</td>
+                        <td>{{order.createdBy}}</td>
+                        <td>{{order.packetsRequired}}</td>
+                        <td>{{order.deliveryDate}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <img src="https://www.mondelezinternational.com/-/media/Mondelez/News/Articles/stronger-together.jpg"
+                class="card-img-bottom" alt="Happy serving the needy...">
+        </div>
+    </div>
+</div>
