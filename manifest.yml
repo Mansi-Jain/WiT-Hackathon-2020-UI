@@ -1,7 +1,7 @@
 ---
 applications :
-- name: "angular-cloud-deployment"
-  path : "dist/angular-cloud-deployment"
+- name: "WiT-Hackathon-UI"
+  path : "dist/WiT-Hackathon-UI"
   memory : 256M
   buildpack :
   - "https://github.com/cloudfoundry/staticfile-buildpack.git"
