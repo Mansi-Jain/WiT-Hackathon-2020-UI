@@ -15,7 +15,7 @@ The Government / NGO team will explore the requests and ensure the assistance.
 1. The user navigates to the site http://wit-ui.eu-gb.mybluemix.net and registers with his Ration Card Number and other basic details.
 2. User can connect with FIM Assistant and ask queries.
 3. User can now login to the FIM Application with his credentials.
-4. User can place a order for food packets. He can place a order once in 10 days.## Project roadmap
+4. User can place a order for food packets. He can place a order once in 10 days.
 
 ### Roadmap:
 - Authentication upon placing/ receiving the orders
