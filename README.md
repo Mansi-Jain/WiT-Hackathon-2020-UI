@@ -16,6 +16,7 @@ The Government / NGO team will explore the requests and ensure the assistance.
 2. User can connect with FIM Assistant and ask queries.
 3. User can now login to the FIM Application with his credentials.
 4. User can place a order for food packets. He can place a order once in 10 days.
+Demo: https://vimeo.com/426531993
 
 ### Roadmap:
 - Authentication upon placing/ receiving the orders
