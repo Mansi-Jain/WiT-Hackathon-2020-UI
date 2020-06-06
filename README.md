@@ -1,27 +1,59 @@
-# WiTHackathonUI
+# Fortune In Misfortune (FIM)
+FIM is an our solution bridge the gap and make sure the Needy is having one stop place to seek for the help 
+The Government / NGO team will explore the requests and ensure the assistance.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+### Tech Stack:
+- Angular 9
+- Bootstrap
+- HTML
+- IBM Watson Assistant
+- IBM Cloud Foundry
 
-## Development server
+### The architecture
+![architecture](src/assets/wit_fi.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. The user navigates to the site http://wit-ui.eu-gb.mybluemix.net and registers with his Ration Card Number and other basic details.
+2. User can connect with FIM Assistant and ask queries.
+3. User can now login to the FIM Application with his credentials.
+4. User can place a order for food packets. He can place a order once in 10 days.
 
-## Code scaffolding
+### Roadmap:
+- Authentication upon placing/ receiving the orders
+- Placing orders through Voice commands
+- Enable the Chat assistant with Dynamic queries like order tracking
+- Enable voice integration in the Chat Assistant
+- Enable it for all cities in India
+- Enable it for NGOs and individual contributors
+- Enable it for Medicines delivery (upon prescription)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Getting started
 
-## Build
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Prerequisites
+What things you need to install the software and how to install them. 
+- Node v12.16.2
+- FIM has been integrated with a backend API which can be found at https://github.com/Mansi-Jain/WiT-Hackathon-2020-API
 
-## Running unit tests
+### Local Development
+Fork and clone the repo to get started
+```bash
+git clone https://github.com/Mansi-Jain/WiT-Hackathon-UI/
+```
+Install the packages:
+```bash
+npm install
+```
+Build the application and run the unit tests:
+```bash
+npm test
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Steps to run FIM-UI locally
+```bash
+npm start
+```
+Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
